@@ -1,0 +1,154 @@
+DMM - Doom 3 MultiMod
+
+Written by: Michael Laforest < paralizer -AT- users -DOT- sourceforge -DOT- net >
+
+
+---------------
+ COMPILING
+---------------
+
+	If you are not compiling DMM from the source, skip to the
+	INSTALLATION section.
+
+	I) On Windows
+
+		a)	Build the Doom3 SDK library.
+
+			1)	Copy the MSVC files release with DMM to the src/ subdirectory
+				of your Doom3 SDK installation.
+			2)	Open MSVC and open the project file Doom3sdk.dsw.
+			3)	Set the active configuration to:
+					gamex86_lib - Win32 Release
+			4)	Open the file game/Game_local.cpp and change the line:
+					extern "C" gameExport_t *GetGameAPI( gameImport_t *import ) {
+				to
+					gameExport_t *GetGameAPI( gameImport_t *import ) {
+			5)	Build gamex86_lib
+			6)	Copy the files from the SDK:
+					src/Release/idlib.lib
+					src/Release/gamex86_lib.lib
+				to the directory above the DMM directory.
+				That is, if this file is located at c:\dmm\dmm\README
+				put the files in c:\dmm
+			7)	Rename the gamex86_lib.lib file to gamex86.lib
+
+		b)	Build DMM
+
+			1)	Open the MSVC project file for DMM in the msvc\
+					subdirectory.
+			2)	Set the active configuration to:
+					dmm - Win32 Release
+			3)	Build dmm
+
+		c)	Get all the files you compiled...
+
+			1)	Copy the following files to a temporary directory
+				of your choice:
+				
+				a)	msvc/Release/dmm.dll
+				b)	pdb/msvc/Release/pdb.dll
+
+	II) On Linux
+
+		a)	Build the Doom3 SDK library.
+
+			There is a nice guide to building the SDK at:
+				http://wiki.doom3reference.com/wiki/Building_on_linux
+
+			Otherwise...
+
+				a)	Enter the src subdirectory
+						# cd src/
+				b	Invoke scons to build the SDK
+						# scons CXX="g++-3.3" BUILD="release"
+					Change "g++-3.3" to your GCC 3.3 binary if needed.
+				c)	If you are building in a 64-bit environment you may need
+					to modify the file SConstruct:
+					i)	Around line 274, change the line:
+						BASELINKFLAGS = [ ]
+						to
+						BASELINKFLAGS = [ "-m32" ]
+					ii) Append to your scons command:
+						BASEFLAGS="-m32"
+				
+		b)	Build DMM
+
+			You can compile and install in one step,
+			this is covered in the INSTALLATION section.
+			Otherwise, you can compile without installing.
+
+			Invoke the command:
+				# make
+			to build just the files, and nothing will be copied.
+
+			Other build targets can be found with the command:
+				# make help
+
+---------------
+ INSTALLATION
+---------------
+
+	I) On Windows
+
+		1)	Make a directory called:
+				dmm/
+			In your Doom3 directory.
+
+		2)	Copy to this directory the following files:
+				pdb.dll
+				dmm.conf
+
+		3)	Run Doom3 then exit.
+		4)	Copy the file gamex86.dll from the Doom3 directory
+			to the dmm/ directory.
+		5)	Copy the file:
+				dmm.dll
+			to your Doom3 directory and rename it to:
+				gamex86.dll
+		6)	Change gamex86.dll in your Doom3 directory to be read-only.
+			To do this, right click on the file, select Properties,
+			select "Read-Only", then apply.
+		7)	Modify the file:
+				dmm.conf
+			as needed.
+
+	II) On Linux
+
+		To build and install DMM, execute the command:
+			# make install
+
+		The makefile will build DMM and copy it to the ~/.doom3/.dmm directory.
+		If you do not have a .dmm/ directory, one will be created for you.
+
+		Modify the file:
+			dmm.conf
+		as needed.
+
+---------------
+ RUNNING
+---------------
+
+	I) On Windows
+
+		Create a shortcut with the path:
+			"C:\doom3\doom3.exe"
+
+		Where "C:\doom3\" is you doom3 installation directory.
+
+
+	II) On Linux
+
+		To run DMM, execute the command:
+			# doom3
+
+		If Doom3 is installed and accessable to you, the game will start and
+		DMM will be automatically loaded.
+
+		Remember, you must be in the "games" group to play Doom3.  See the Doom3
+		installation directions for more information on setting up Doom3.
+
+---------------
+ COMPILING AND INSTALLING PLUGINS
+---------------
+
+	See any plugin documentation for specific installation instructions.

@@ -1,0 +1,89 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "d3xp_gamex86"=.\d3xp_gamex86.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name idlib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "d3xp_gamex86_lib"=.\d3xp_gamex86_lib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name idlib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "gamex86"=.\gamex86.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name idlib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "gamex86_lib"=.\gamex86_lib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name idlib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "idlib"=.\idlib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

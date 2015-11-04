@@ -1,0 +1,40 @@
+
+[filenumbers]
+0=228
+1=3000
+2=3406
+3=622
+4=82
+
+[filemarkers]
+0=
+1=
+2=
+3=
+4=
+
+[File View]
+filter.file.unmatch=*.so *.o *.a *.la
+filter.file.ignore.hidden=0
+filter.dir.ignore.hidden=0
+
+[executer]
+RunInTerminal=true
+
+[Project State]
+clean before build=false
+
+[filelist]
+0=/home/para/id_stuff/doom3/sdk/src/game/gamesys/Class.cpp
+1=/home/para/id_stuff/doom3/sdk/src/game/Game_local.cpp
+2=/home/para/id_stuff/doom3/sdk/src/game/Player.cpp
+3=/home/para/id_stuff/sdk/game/Player.h
+4=/home/para/dmm/dmm_stub/src/dmm_stub.cpp
+
+[Project Tree]
+0=0
+1=0:0
+2=0:1
+
+[File Tree]
+0=0
